@@ -1,15 +1,24 @@
-// define interface for Hero and Shop objects
 interface Hero {
-  /* Your code here */
+  items: string[];
+  gold: number;
 }
 
 interface Shop {
-  /* Your code here */
+  item: string;
+  price: number;
 }
 
 // assign interface/type to the function definition properly
-function buyItem(hero, shop) {
-  /* Your code here */
+function buyItem(hero: Hero, shop: Shop) {
+  if (hero.gold >= shop.price) {
+    hero.items.push(String(shop.item));
+    console.log(hero.items);
+    return hero.gold-shop.price;
+  } else {
+    console.log(hero.items);
+    return hero.gold;
+  }
+  
 }
 
 //Test cases : assign proper type/interface to all objects
@@ -37,3 +46,5 @@ console.log(buyItem(hero1, shop1));
 console.log(buyItem(hero2, shop2));
 
 module.exports = buyItem;
+
+//นายชวิน เกตุภาค 660612142
