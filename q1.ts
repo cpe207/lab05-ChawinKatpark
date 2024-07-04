@@ -12,11 +12,10 @@ interface Shop {
 function buyItem(hero: Hero, shop: Shop) {
   if (hero.gold >= shop.price) {
     hero.items.push(String(shop.item));
-    console.log(hero.items);
-    return hero.gold-shop.price;
+    hero.gold = hero.gold-shop.price
+    return hero;
   } else {
-    console.log(hero.items);
-    return hero.gold;
+    return hero;
   }
   
 }

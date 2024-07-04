@@ -2,12 +2,11 @@
 function buyItem(hero, shop) {
     if (hero.gold >= shop.price) {
         hero.items.push(String(shop.item));
-        console.log(hero.items);
-        return hero.gold - shop.price;
+        hero.gold = hero.gold - shop.price;
+        return hero;
     }
     else {
-        console.log(hero.items);
-        return hero.gold;
+        return hero;
     }
 }
 //Test cases : assign proper type/interface to all objects
